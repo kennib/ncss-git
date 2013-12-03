@@ -72,3 +72,13 @@ Then we "push" the changes we made to our friend.
 Our friend then makes some changes of his own which include some better colours and graphics.
 We can get these changes from her remote repository by telling git to "pull" them.
 A git "pull" essentially "fetches" the changes from the remote location and "merges" them with our changes.
+
+## A Walkthrough
+All of these concepts can be quite tricky to understand.
+Especially if you've never used a version control system before.
+Perhaps the best way to learn version control is by using it in a real world setting.
+
+The following section walks through how a group of programmers might use version control.
+You don't need to understand it all at once and you certainly don't need to remember it all.
+Use each section as a reference for how to perform certain tasks with version control.
+
