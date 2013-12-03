@@ -41,16 +41,34 @@ These changes are known as "commits".
 
 Each commit can have multiple files associated with it and has associated with it a message that describes the commit's contents.
 Commits are manually created and can be considered a discrete set of work done.
-That is, I wouldn't commit every time I saved my python program because a program with synatx errors probably isn't helpful to keep a record of.
+That is, I wouldn't commit every time I saved my python program because a program with syntax errors probably isn't helpful to keep a record of.
 But I would commit if I had written a simple working version of a function that I planned to make more complicated.
 
-Before commiting files we first "stage" them.
+Before committing files we first "stage" them.
 This staging helps us differentiate changes we want to commit (i.e., record the history of) and those we want to ignore for now.
 Staging allows to add/remove files from a commit before confirming the commit and giving the commit a descriptive message.
 
 In git there is a distinction between "tracked" and "untracked" files.
-Tracked files have been staged and then commited.
+Tracked files have been staged and then committed.
 They are associated with the repository and will be copied if the repository is "cloned".
 Untracked files are files that are not associated with the repository since they have never been committed or removed from the repository.
 Both tracked and untracked files can exist in the same directory as the repository. Only tracked files are a part of the repository.
 
+### Collaborating with git
+<!--- This section should also have a diagram --->
+
+Git is a "Distributed Version Control System".
+This means that everyone has their own repository with its own files and commits.
+The repository you have is called the "local" repository. External repositories are called "remote" repositories.
+Collaboration is done by "push"ing and "pull"ing code to and from remote repositories.
+
+Let's say your friend has a repository for a cool space invaders game and you'd like to make some improvements to it.
+The first thing we would do is create our own local version of the repository by "cloning" it.
+
+The next step is making our changes to the game, sound effects and James Curran UFOs.
+Ideally committing each of these changes separately.
+Then we "push" the changes we made to our friend.
+
+Our friend then makes some changes of his own which include some better colours and graphics.
+We can get these changes from her remote repository by telling git to "pull" them.
+A git "pull" essentially "fetches" the changes from the remote location and "merges" them with our changes.
