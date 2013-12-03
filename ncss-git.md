@@ -27,3 +27,30 @@ At some point though we should probably ask ourselves if someone has already mad
 The answer is of course yes! There are many different version control systems available.
 At NCSS we will be using git <http://git-scm.com/>
 
+
+# Git
+## What is git?
+### The components of git
+<!--- It would be helpful to have a diagram that summarises this section --->
+
+In the most basic sense git is made up of collections of files called "repositories".
+Each repository is a directory that contains the files for a particular project, for example a small social network site.
+
+A repository also contains the history of these files as they've changed.
+These changes are known as "commits".
+
+Each commit can have multiple files associated with it and has associated with it a message that describes the commit's contents.
+Commits are manually created and can be considered a discrete set of work done.
+That is, I wouldn't commit every time I saved my python program because a program with synatx errors probably isn't helpful to keep a record of.
+But I would commit if I had written a simple working version of a function that I planned to make more complicated.
+
+Before commiting files we first "stage" them.
+This staging helps us differentiate changes we want to commit (i.e., record the history of) and those we want to ignore for now.
+Staging allows to add/remove files from a commit before confirming the commit and giving the commit a descriptive message.
+
+In git there is a distinction between "tracked" and "untracked" files.
+Tracked files have been staged and then commited.
+They are associated with the repository and will be copied if the repository is "cloned".
+Untracked files are files that are not associated with the repository since they have never been committed or removed from the repository.
+Both tracked and untracked files can exist in the same directory as the repository. Only tracked files are a part of the repository.
+
