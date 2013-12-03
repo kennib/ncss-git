@@ -121,3 +121,110 @@ Luckily Kenni has put the repo on the NCSS servers.
 ```bash
 git clone http://ncss.edu.au/2014/group0/ncssbook.git
 ```
+
+
+### Making some changes
+
+<!---
+Creating new files
+Staging/tracking files
+  git add <file>
+
+Checking the changes/commit
+  git diff <file>
+  git status
+
+Committing changes
+  git commit
+--->
+
+
+### Sharing the changes
+
+<!---
+Pushing the changes
+  git push
+
+Pulling the changes
+  git pull
+--->
+
+
+### Fixing mistakes
+
+<!---
+Unstaging files
+  git reset HEAD
+
+Untracking files
+  git rm --cached <file>
+Completely remove file
+  git rm <file>
+
+Undo the last commit 
+  git reset --soft HEAD^
+
+Fixing the previous commit
+  git add <file> 
+  git commit --amend
+
+Why it's a bad idea to try and change the remote repo's history
+--->
+
+
+### Merging other people's work
+
+<!---
+Situations where we can't push due to changes to the remote repo
+  git push
+
+Merge conflict
+  git pull
+Make changes to fix conflict
+  git merge
+--->
+
+
+### Avoiding conflicts
+
+<!---
+Why branches?
+
+Create a new branch
+  git branch <branch>
+
+Changing branch
+  git checkout <branch> 
+
+Merging branches
+  git checkout <branch-to-merge-into>
+  git merge <branch-to-merge>
+---> 
+
+
+### Going back in time
+
+<!---
+Viewing old commits
+  git log
+
+Labelling commits
+  git tag
+
+Stashing changes temporarily
+  git stash
+Quick changes
+  git pop
+
+Viewing old files
+  git diff <commit-a> <commit-b>
+
+Revert to previous commit
+  git reset --hard
+
+Revert to old commit
+  git revert <commit>
+--->
+
+## Workflow
+<!--- A digram explaining the stage/commit/pull/push workflow --->
