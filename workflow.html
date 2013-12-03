@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>
+    </title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+workflow = {
+  "Working on a project": {
+    "Create a new repository": "git init",
+    "Working on a feature": {
+      "Incremental changes have been made": {
+      },
+      "Functioning changes have been made": {
+      }
+    }
+  }
+};
+
+function render(element, tree, title) {
+  var el = $(element);
+  el.append('<p>'+title+'</p>');
+
+  var rootElement = $('<ol></ol>');
+  el.append(rootElement);
+  
+  if (typeof(tree) === typeof({})) {
+    console.log(tree);
+    for (subtitle in tree) {
+      var subtree = tree[subtitle]
+      var subElement = rootElement.append('<li></li>');
+      render(subElement, subtree, subtitle);
+    }
+  } else {
+    rootElement.append(tree);
+  }
+}
+
+$(window).load(function() {
+  render('body', workflow, 'git workflow');
+});
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
