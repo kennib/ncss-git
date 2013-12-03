@@ -82,3 +82,42 @@ The following section walks through how a group of programmers might use version
 You don't need to understand it all at once and you certainly don't need to remember it all.
 Use each section as a reference for how to perform certain tasks with version control.
 
+There will be screenshots of Github for Windows and command line samples.
+Feel free to use whichever you are most comfortable with.
+
+### The scenario
+Dom, Smerity, Kenni and Georgina are creating a social network site with python!
+For the sake of brevity let's call this team "Group 0".
+All of them have Github for Windows installed already.
+All of them will be adding changes to the project at some stage.
+
+### Getting set up
+The first thing Group 0 need to do is create a new repository.
+
+<!---
+I don't know if we want to use Github or Bitbucket as opposed to a vanilla git repo
+I'm inclined to avoid Github and Bitbucket to avoid having to create/manage accounts for those services.
+  - Kenni
+--->
+
+Kenni creates a repository called ncssbook.
+
+<!--- Screenshot of GfW repo creation --->
+```bash
+git init ncssbook
+```
+
+This repository won't be worked directly by any of Group 0.
+Instead this repository is like a remote backup that will be updated with the latest version of the code as the group member "push" it out.
+
+<!--- Diagram of the relationship between the repos --->
+
+
+Now everyone has to "clone" a copy of ncssbook for themselves.
+To be able to do this they have to be able to access the repository over the internet.
+Luckily Kenni has put the repo on the NCSS servers.
+
+<!--- Screenshot of GfW repo cloning --->
+```bash
+git clone http://ncss.edu.au/2014/group0/ncssbook.git
+```
