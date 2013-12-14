@@ -103,11 +103,14 @@ I'm inclined to avoid Github and Bitbucket to avoid having to create/manage acco
 Kenni creates a repository called ncssbook.
 
 <!--- Screenshot of GfW repo creation --->
+![Information is eneter about the repository and then the create button is clicked](images/create-gw.png "Creating a repository")
+![The repository is created and is shown in the list](images/created-gw.png "The repository has been created")
+
 ```bash
 git init ncssbook
 ```
 
-This repository won't be worked directly by any of Group 0.
+This repository won't be worked on directly by any of Group 0.
 Instead this repository is like a remote backup that will be updated with the latest version of the code as the group member "push" it out.
 
 <!--- Diagram of the relationship between the repos --->
@@ -117,7 +120,12 @@ Now everyone has to "clone" a copy of ncssbook for themselves.
 To be able to do this they have to be able to access the repository over the internet.
 Luckily Kenni has put the repo on the NCSS servers.
 
+To clone the repository Dom simply drags a link to the repository onto Github for Windows.
+
 <!--- Screenshot of GfW repo cloning --->
+![Drag any url (must start with the protocol e.g. `http`) onto the window](images/clone-gw.png "Clone the repository")
+![The repository is cloned and opened](images/cloned-gw.png "The repository is cloned")
+
 ```bash
 git clone http://ncss.edu.au/2014/group0/ncssbook.git
 ```
