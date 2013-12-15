@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="main.css" type="text/css" />
+</head>
+<body>
+<h1 id="version-control">Version Control</h1>
+<h2 id="what-exactly-is-version-control">What exactly is version control?</h2>
+<p>Version control is simply a way to track your files as they change.</p>
+<p>At its core it's really not that complicated at all. You may have even created a very simple version of it yourself. Something like this:</p>
+<ul>
+<li>~Essay FINAL really final this time.doc</li>
+<li>Essay.doc</li>
+<li>Essay (final draft).doc</li>
+<li>Essay FINAL.doc</li>
+<li>Essay FINAL1.doc</li>
+<li>Essay FINAL countdown.doc</li>
+<li>Essay (first draft).doc</li>
+<li>Essay (first draft) 1.doc</li>
+</ul>
+<h2 id="why-use-a-version-control-tool">Why use a version control tool?</h2>
+<p>There are many problems that will appear with a solution like the above one. What is the file we're currently working on? How do we find that sentence about the effect of the plutocracy on bourgeois society? Was it in &quot;Essay FINAL.doc&quot; or &quot;Essay.doc&quot;? What if we just want to change back to the version of the essay we had at the start of the day? What if we've already saved over that version? What if we need to collaborate with someone on our essay? Do we have to manual go through and find all the changes we both made and merge them together?</p>
+<p>We could of course come up with increasingly more consistent and complicated schemes for naming and storing our files. At some point though we should probably ask ourselves if someone has already made a tool for helping us do this. The answer is of course yes! There are many different version control systems available. At NCSS we will be using git <a href="http://git-scm.com/">http://git-scm.com/</a></p>
+<h1 id="git">Git</h1>
+<h2 id="what-is-git">What is git?</h2>
+<h3 id="the-components-of-git">The components of git</h3>
+<!-- It would be helpful to have a diagram that summarises this section -->
+
+<p>In the most basic sense git is made up of collections of files called &quot;repositories&quot;. Each repository is a directory that contains the files for a particular project, for example a small social network site.</p>
+<p>A repository also contains the history of these files as they've changed. These changes are known as &quot;commits&quot;.</p>
+<p>Each commit can have multiple files associated with it and has associated with it a message that describes the commit's contents. Commits are manually created and can be considered a discrete set of work done. That is, I wouldn't commit every time I saved my python program because a program with syntax errors probably isn't helpful to keep a record of. But I would commit if I had written a simple working version of a function that I planned to make more complicated.</p>
+<p>Before committing files we first &quot;stage&quot; them. This staging helps us differentiate changes we want to commit (i.e., record the history of) and those we want to ignore for now. Staging allows to add/remove files from a commit before confirming the commit and giving the commit a descriptive message.</p>
+<p>In git there is a distinction between &quot;tracked&quot; and &quot;untracked&quot; files. Tracked files have been staged and then committed. They are associated with the repository and will be copied if the repository is &quot;cloned&quot;. Untracked files are files that are not associated with the repository since they have never been committed or removed from the repository. Both tracked and untracked files can exist in the same directory as the repository. Only tracked files are a part of the repository.</p>
+<h3 id="collaborating-with-git">Collaborating with git</h3>
+<!-- This section should also have a diagram -->
+
+<p>Git is a &quot;Distributed Version Control System&quot;. This means that everyone has their own repository with its own files and commits. The repository you have is called the &quot;local&quot; repository. External repositories are called &quot;remote&quot; repositories. Collaboration is done by &quot;push&quot;ing and &quot;pull&quot;ing code to and from remote repositories.</p>
+<p>Let's say your friend has a repository for a cool space invaders game and you'd like to make some improvements to it. The first thing we would do is create our own local version of the repository by &quot;cloning&quot; it.</p>
+<p>The next step is making our changes to the game, sound effects and James Curran UFOs. Ideally committing each of these changes separately. Then we &quot;push&quot; the changes we made to our friend.</p>
+<p>Our friend then makes some changes of his own which include some better colours and graphics. We can get these changes from her remote repository by telling git to &quot;pull&quot; them. A git &quot;pull&quot; essentially &quot;fetches&quot; the changes from the remote location and &quot;merges&quot; them with our changes.</p>
+<h2 id="a-walkthrough">A Walkthrough</h2>
+<p>All of these concepts can be quite tricky to understand. Especially if you've never used a version control system before. Perhaps the best way to learn version control is by using it in a real world setting.</p>
+<p>The following section walks through how a group of programmers might use version control. You don't need to understand it all at once and you certainly don't need to remember it all. Use each section as a reference for how to perform certain tasks with version control.</p>
+<p>There will be screenshots of Github for Windows and command line samples. Feel free to use whichever you are most comfortable with.</p>
+<h3 id="the-scenario">The scenario</h3>
+<p>Dom, Smerity, Kenni and Georgina are creating a social network site with python! For the sake of brevity let's call this team &quot;Group 0&quot;. All of them have Github for Windows installed already. All of them will be adding changes to the project at some stage.</p>
+<h3 id="getting-set-up">Getting set up</h3>
+<p>The first thing Group 0 need to do is create a new repository.</p>
+<!--
+I don't know if we want to use Github or Bitbucket as opposed to a vanilla git repo
+I'm inclined to avoid Github and Bitbucket to avoid having to create/manage accounts for those services.
+  - Kenni
+-->
+
+<p>Kenni creates a repository called ncssbook.</p>
+<!-- Screenshot of GfW repo creation -->
+<div class="figure">
+<img src="images/create-gw.png" title="Creating a repository" alt="Information is entered about the repository and then the create button is clicked" /><p class="caption">Information is entered about the repository and then the create button is clicked</p>
+</div>
+<div class="figure">
+<img src="images/created-gw.png" title="The repository has been created" alt="The repository is created and is shown in the list" /><p class="caption">The repository is created and is shown in the list</p>
+</div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> init ncssbook</code></pre>
+<p>This repository won't be worked on directly by any of Group 0. Instead this repository is like a remote backup that will be updated with the latest version of the code as the group member &quot;push&quot; it out.</p>
+<!-- Diagram of the relationship between the repos -->
+
+
+<p>Now everyone has to &quot;clone&quot; a copy of ncssbook for themselves. To be able to do this they have to be able to access the repository over the internet. Luckily Kenni has put the repo on the NCSS servers.</p>
+<p>To clone the repository Dom simply drags a link to the repository onto Github for Windows.</p>
+<!-- Screenshot of GfW repo cloning -->
+<div class="figure">
+<img src="images/clone-gw.png" title="Clone the repository" alt="Drag any url (must start with the protocol e.g. http) onto the window" /><p class="caption">Drag any url (must start with the protocol e.g. <code>http</code>) onto the window</p>
+</div>
+<div class="figure">
+<img src="images/cloned-gw.png" title="The repository is cloned" alt="The repository is cloned and opened" /><p class="caption">The repository is cloned and opened</p>
+</div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> clone http://ncss.edu.au/2014/group0/ncssbook.git</code></pre>
+<h3 id="adding-new-files">Adding new files</h3>
+<p>The first thing Group 0 are going to do with this new repository is create an index page for their social network. To do this Georgina simply creates a file called <code>index.html</code> using her favourite text editor (vimacs).</p>
+<!-- Screenshot of folder -->
+<div class="figure">
+<img src="images/newfile-ex.png" title="index.html file is created" alt="There is now an index.html file in the ncssbook folder" /><p class="caption">There is now an index.html file in the ncssbook folder</p>
+</div>
+<p>Once the file exists it can be added to the repository using Github for Windows. We can see on thee right hand side of the window the list of new files. For the moment this is just <code>index.html</code>. The checkbox next to its name indicates Georgina wants it to be part of the repository.</p>
+<!-- Screenshot of new files in GfW -->
+<div class="figure">
+<img src="images/newfile-gw.png" title="index.html is list as a new file" alt="The index.html file is listed as &#39;NEW&#39; in Github for Windows" /><p class="caption">The index.html file is listed as 'NEW' in Github for Windows</p>
+</div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Show the files that are new</span>
+<span class="kw">git</span> status
+
+<span class="co"># Add the index page to the commit</span>
+<span class="kw">git</span> add index.html</code></pre>
+<p>Now it's time for Georgina to commit the changes to her repository. To do this she adds a message to the text field and then clicks 'commit to master'.</p>
+<!-- Screenshot of committing in GfW -->
+<div class="figure">
+<img src="images/commit-gw.png" title="A helpful commit message is written" alt="The commit message is entered into the text field and then the &#39;commit to master&#39; button gets clicked" /><p class="caption">The commit message is entered into the text field and then the 'commit to master' button gets clicked</p>
+</div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> commit -m <span class="st">&quot;The new home page for NCSSBook&quot;</span></code></pre>
+<div class="figure">
+<img src="images/committed-gw.png" title="The commit has been added" alt="The commit has been added and we now have a record of our changes" /><p class="caption">The commit has been added and we now have a record of our changes</p>
+</div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> log</code></pre>
+<h3 id="sharing-the-changes">Sharing the changes</h3>
+<p>At the moment Georgina is the only person who has the NCSSBook homepage. So the next step for Georgina is to push the commit containing <code>index.html</code> to the remote repository Kenni created.</p>
+<!-- Screenshot of pushing commits in GfW -->
+<div class="figure">
+<img src="images/push-gw.png" title="The commit is pushed to the remote server" alt="The commit gets pushed to the remote server when the &#39;publish&#39; button is clicked" /><p class="caption">The commit gets pushed to the remote server when the 'publish' button is clicked</p>
+</div>
+<div class="figure">
+<img src="images/pushed-gw.png" title="The commit is now synced" alt="The commit moves from &#39;unsynced commits&#39; to &#39;history&#39;" /><p class="caption">The commit moves from 'unsynced commits' to 'history'</p>
+</div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> push</code></pre>
+<p>Now everyone else in Group 0 can pull the changes stored on the remote repository. For example Smerity clicks on the 'sync' button to pull the commit.</p>
+<!-- Screenshot of pullng commits in GfW -->
+<div class="figure">
+<img src="images/pull-gw.png" title="The commit is now synced" alt="The changes pushed from the remote repository have been pulled to a different local repository" /><p class="caption">The changes pushed from the remote repository have been pulled to a different local repository</p>
+</div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> pull</code></pre>
+<h3 id="adding-more-changes">Adding more changes</h3>
+<p>Having updated his repository with Georgina's changes, Smerity wants to make some changes of his own. He changes the title and adds some explanatory text to <code>index.html</code> in his text editor. In Github for Windows we can see the changes he has made.</p>
+<!-- Screenshot of diff in GfW -->
+<div class="figure">
+<img src="images/diff-gw.png" title="The difference between commits is shown" alt="The changes can be seen as a series of lines added/removed between commits" /><p class="caption">The changes can be seen as a series of lines added/removed between commits</p>
+</div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> diff</code></pre>
+<p>Smerity can now add a commit message, commit to master, then sync the repository to share his changes. This is much the same process as Georgina went through when she added a new file earlier.</p>
+<h3 id="merging-conflicting-work">Merging conflicting work</h3>
+<p>While Smerity was making his changes Dom was making some changes of his own to the page. He has already committed his changes to his local repository and is about to sync his changes with the remote repository.</p>
+<!-- Screenshot of up/down commits in GfW -->
+<div class="figure">
+<img src="images/conflict-gw.png" title="The up/down arrows next to the sync button represent commits" alt="The up arrow represent commits to be pushed and the down arrow represents commits to be pulled" /><p class="caption">The up arrow represent commits to be pushed and the down arrow represents commits to be pulled</p>
+</div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Get the changes from the remote repository</span>
+<span class="kw">git</span> fetch
+
+<span class="co"># Check the local repository&#39;s status</span>
+<span class="kw">git</span> status
+<span class="co"># On branch master</span>
+<span class="co"># Your branch and &#39;origin/master&#39; have diverged,</span>
+<span class="co"># and have 1 and 1 different commit(s) each, respectively.</span>
+<span class="co">#</span>
+<span class="kw">nothing</span> to commit (working directory clean)</code></pre>
+<p>Dom sees in the top right corner of Github for Windows that his repository has a commit that the remote repository doesn't have yet and vice-versa. So when he clicks the sync button he knows theres a possibility git cannot merge his changes with the remote changes.</p>
+<!-- Screenshot of conflicting commits in GfW -->
+<div class="figure">
+<img src="images/conflicted-gw.png" title="A message appears that states that we have &#39;failed to sync this branch&#39;" alt="The local commit and the commit on the remote repository are conflicting" /><p class="caption">The local commit and the commit on the remote repository are conflicting</p>
+</div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> pull
+<span class="kw">Auto-merging</span> index.html
+<span class="kw">CONFLICT</span> (content)<span class="kw">:</span> Merge conflict in index.html
+<span class="kw">Automatic</span> merge failed<span class="kw">;</span> <span class="kw">fix</span> conflicts and then commit the result.</code></pre>
+<p>It turns out Dom's changes conflict with Smerity's changes. When Dom clicks on the button to show uncommitted changes he can see where the conflicts are.</p>
+<!-- Screenshot of conflict diff in GfW -->
+<div class="figure">
+<img src="images/conflicting-gw.png" title="The difference between the conflicting commits is displayed" alt="The uncommitted changes show where the local and remote commits differ" /><p class="caption">The uncommitted changes show where the local and remote commits differ</p>
+</div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> diff</code></pre>
+<p>The lines between <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> and <code>=======</code> are the lines from Dom's local repository. The lines between <code>=======</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 649c884a14...</code> are the lines from the remote repository (i.e., Smerity's changes).</p>
+<p>Now Dom has to choose which pieces of the conflicting file he would like to keep. In the end he decides he likes Smerity's heading but thinks his own subtitle is better. Dom edits the file in his text editor, adds a commit message and then clicks 'commit to master'.</p>
+<!-- Screenshot of conflict merge in GfW -->
+<div class="figure">
+<img src="images/merge-gw.png" title="The changes between the previous commit and merge with the remote commit are shown" alt="The conflicts have been fixed and are about to be committed to finish resolving them" /><p class="caption">The conflicts have been fixed and are about to be committed to finish resolving them</p>
+</div>
+<div class="figure">
+<img src="images/merged-gw.png" title="All commit can be seen including those pulled from the remote repository" alt="The history of the repository is now resolved" /><p class="caption">The history of the repository is now resolved</p>
+</div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># After fixing conflicts in index.html</span>
+<span class="kw">git</span> add index.html
+<span class="kw">git</span> commit -m <span class="st">&quot;Changed NCSSBook heading&quot;</span>
+
+<span class="co"># See all of the commits</span>
+<span class="kw">git</span> log</code></pre>
+<p>The final step is for Dom to send his changes to the remote repository by clicking the sync button.</p>
+<!-- Screenshot of syncing merge in GfW -->
+<div class="figure">
+<img src="images/merging-gw.png" title="Syncing the results of merging the conflicts" alt="The up arrow shows us there are two commits to be sent to the remote repository" /><p class="caption">The up arrow shows us there are two commits to be sent to the remote repository</p>
+</div>
+<div class="figure">
+<img src="images/merged-gw.png" title="Now there are no unsynced commits" alt="The commits have been synced and we can see the neat history of NCSSBook" /><p class="caption">The commits have been synced and we can see the neat history of NCSSBook</p>
+</div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> status
+<span class="co"># On branch master</span>
+<span class="co"># Your branch is ahead of &#39;origin/master&#39; by 2 commits.</span>
+<span class="co">#</span>
+<span class="kw">nothing</span> to commit (working directory clean)
+
+<span class="kw">git</span> push</code></pre>
+<h3 id="fixing-mistakes">Fixing mistakes</h3>
+<!--
+Unstaging files
+  git reset HEAD
+
+Untracking files
+  git rm --cached <file>
+Completely remove file
+  git rm <file>
+
+Undo the last commit 
+  git reset --soft HEAD^
+
+Fixing the previous commit
+  git add <file> 
+  git commit --amend
+
+Why it's a bad idea to try and change the remote repo's history
+-->
+
+
+<h3 id="avoiding-conflicts">Avoiding conflicts</h3>
+<!--
+Why branches?
+
+Create a new branch
+  git branch <branch>
+
+Changing branch
+  git checkout <branch> 
+
+Merging branches
+  git checkout <branch-to-merge-into>
+  git merge <branch-to-merge>
+--> 
+
+
+<h3 id="going-back-in-time">Going back in time</h3>
+<!--
+Viewing old commits
+  git log
+
+Labelling commits
+  git tag
+
+Stashing changes temporarily
+  git stash
+Quick changes
+  git pop
+
+Viewing old files
+  git diff <commit-a> <commit-b>
+
+Revert to previous commit
+  git reset --hard
+
+Revert to old commit
+  git revert <commit>
+-->
+
+<h2 id="workflow">Workflow</h2>
+<!-- A digram explaining the stage/commit/pull/push workflow -->
+
+</body>
+</html>
