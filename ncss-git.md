@@ -192,6 +192,102 @@ For example Smerity clicks on the 'sync' button to pull the commit.
 git pull
 ```
 
+
+### Adding more changes
+Having updated his repository with Georgina's changes, Smerity wants to make some changes of his own.
+He changes the title and adds some explanatory text to `index.html` in his text editor.
+In Github for Windows we can see the changes he has made.
+
+<!-- Screenshot of diff in GfW -->
+![The changes can be seen as a series of lines added/removed between commits](images/diff-gw.png "The difference between commits is shown")
+
+```bash
+git diff
+```
+
+Smerity can now add a commit message, commit to master, then sync the repository to share his changes.
+This is much the same process as Georgina went through when she added a new file earlier.
+
+
+### Merging conflicting work
+While Smerity was making his changes Dom was making some changes of his own to the page.
+He has already committed his changes to his local repository and is about to sync his changes with the remote repository.
+
+<!-- Screenshot of up/down commits in GfW -->
+![The up arrow represent commits to be pushed and the down arrow represents commits to be pulled](images/conflict-gw.png "The up/down arrows next to the sync button represent commits")
+
+```bash
+# Get the changes from the remote repository
+git fetch
+
+# Check the local repository's status
+git status
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 1 different commit(s) each, respectively.
+#
+nothing to commit (working directory clean)
+```
+
+Dom sees in the top right corner of Github for Windows that his repository has a commit that the remote repository doesn't have yet and vice-versa.
+So when he clicks the sync button he knows theres a possibility git cannot merge his changes with the remote changes.
+
+<!-- Screenshot of conflicting commits in GfW -->
+![The local commit and the commit on the remote repository are conflicting](images/conflicted-gw.png "A message appears that states that we have 'failed to sync this branch'")
+
+```bash
+git pull
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+It turns out Dom's changes conflict with Smerity's changes.
+When Dom clicks on the button to show uncommitted changes he can see where the conflicts are.
+
+<!-- Screenshot of conflict diff in GfW -->
+![The uncommitted changes show where the local and remote commits differ](images/conflicting-gw.png "The difference between the conflicting commits is displayed")
+
+```bash
+git diff
+```
+
+The lines between `<<<<<<< HEAD` and `=======` are the lines from Dom's local repository.
+The lines between `=======` and `>>>>>>> 649c884a14...` are the lines from the remote repository (i.e., Smerity's changes).
+
+Now Dom has to choose which pieces of the conflicting file he would like to keep.
+In the end he decides he likes Smerity's heading but thinks his own subtitle is better.
+Dom edits the file in his text editor, adds a commit message and then clicks 'commit to master'.
+
+<!-- Screenshot of conflict merge in GfW -->
+![The conflicts have been fixed and are about to be committed to finish resolving them](images/merge-gw.png "The changes between the previous commit and merge with the remote commit are shown")
+![The history of the repository is now resolved](images/merged-gw.png "All commit can be seen including those pulled from the remote repository")
+
+```bash
+# After fixing conflicts in index.html
+git add index.html
+git commit -m "Changed NCSSBook heading"
+
+# See all of the commits
+git log
+```
+
+The final step is for Dom to send his changes to the remote repository by clicking the sync button.
+
+<!-- Screenshot of syncing merge in GfW -->
+![The up arrow shows us there are two commits to be sent to the remote repository](images/merging-gw.png "Syncing the results of merging the conflicts")
+![The commits have been synced and we can see the neat history of NCSSBook](images/merged-gw.png "Now there are no unsynced commits")
+
+```bash
+git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 2 commits.
+#
+nothing to commit (working directory clean)
+
+git push
+```
+
 ### Fixing mistakes
 
 <!--
@@ -211,19 +307,6 @@ Fixing the previous commit
   git commit --amend
 
 Why it's a bad idea to try and change the remote repo's history
--->
-
-
-### Merging other people's work
-
-<!--
-Situations where we can't push due to changes to the remote repo
-  git push
-
-Merge conflict
-  git pull
-Make changes to fix conflict
-  git merge
 -->
 
 
