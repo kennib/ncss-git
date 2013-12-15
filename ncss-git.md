@@ -171,15 +171,26 @@ git log
 
 
 ### Sharing the changes
+At the moment Georgina is the only person who has the NCSSBook homepage.
+So the next step for Georgina is to push the commit containing `index.html` to the remote repository Kenni created.
 
-<!---
-Pushing the changes
-  git push
+<!--- Screenshot of pushing commits in GfW --->
+![The commit gets pushed to the remote server when the 'publish' button is clicked](images/push-gw.png "The commit is pushed to the remote server")
+![The commit moves from 'unsynced commits' to 'history'](images/pushed-gw.png "The commit is now synced")
 
-Pulling the changes
-  git pull
---->
+```bash
+git push
+```
 
+Now everyone else in Group 0 can pull the changes stored on the remote repository.
+For example Smerity clicks on the 'sync' button to pull the commit.
+
+<!--- Screenshot of pullng commits in GfW --->
+![The changes pushed from the remote repository have been pulled to a different local repository](images/pull-gw.png "The commit is now synced")
+
+```bash
+git pull
+```
 
 ### Fixing mistakes
 
