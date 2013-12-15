@@ -104,6 +104,7 @@ Kenni creates a repository called ncssbook.
 
 <!-- Screenshot of GfW repo creation -->
 ![Information is eneter about the repository and then the create button is clicked](images/create-gw.png "Creating a repository")
+
 ![The repository is created and is shown in the list](images/created-gw.png "The repository has been created")
 
 ```bash
@@ -124,6 +125,7 @@ To clone the repository Dom simply drags a link to the repository onto Github fo
 
 <!-- Screenshot of GfW repo cloning -->
 ![Drag any url (must start with the protocol e.g. `http`) onto the window](images/clone-gw.png "Clone the repository")
+
 ![The repository is cloned and opened](images/cloned-gw.png "The repository is cloned")
 
 ```bash
@@ -176,6 +178,7 @@ So the next step for Georgina is to push the commit containing `index.html` to t
 
 <!-- Screenshot of pushing commits in GfW -->
 ![The commit gets pushed to the remote server when the 'publish' button is clicked](images/push-gw.png "The commit is pushed to the remote server")
+
 ![The commit moves from 'unsynced commits' to 'history'](images/pushed-gw.png "The commit is now synced")
 
 ```bash
@@ -261,6 +264,7 @@ Dom edits the file in his text editor, adds a commit message and then clicks 'co
 
 <!-- Screenshot of conflict merge in GfW -->
 ![The conflicts have been fixed and are about to be committed to finish resolving them](images/merge-gw.png "The changes between the previous commit and merge with the remote commit are shown")
+
 ![The history of the repository is now resolved](images/merged-gw.png "All commit can be seen including those pulled from the remote repository")
 
 ```bash
@@ -276,6 +280,7 @@ The final step is for Dom to send his changes to the remote repository by clicki
 
 <!-- Screenshot of syncing merge in GfW -->
 ![The up arrow shows us there are two commits to be sent to the remote repository](images/merging-gw.png "Syncing the results of merging the conflicts")
+
 ![The commits have been synced and we can see the neat history of NCSSBook](images/merged-gw.png "Now there are no unsynced commits")
 
 ```bash
