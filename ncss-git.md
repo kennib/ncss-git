@@ -31,7 +31,7 @@ At NCSS we will be using git <http://git-scm.com/>
 # Git
 ## What is git?
 ### The components of git
-<!--- It would be helpful to have a diagram that summarises this section --->
+<!-- It would be helpful to have a diagram that summarises this section -->
 
 In the most basic sense git is made up of collections of files called "repositories".
 Each repository is a directory that contains the files for a particular project, for example a small social network site.
@@ -55,7 +55,7 @@ Untracked files are files that are not associated with the repository since they
 Both tracked and untracked files can exist in the same directory as the repository. Only tracked files are a part of the repository.
 
 ### Collaborating with git
-<!--- This section should also have a diagram --->
+<!-- This section should also have a diagram -->
 
 Git is a "Distributed Version Control System".
 This means that everyone has their own repository with its own files and commits.
@@ -94,15 +94,15 @@ All of them will be adding changes to the project at some stage.
 ### Getting set up
 The first thing Group 0 need to do is create a new repository.
 
-<!---
+<!--
 I don't know if we want to use Github or Bitbucket as opposed to a vanilla git repo
 I'm inclined to avoid Github and Bitbucket to avoid having to create/manage accounts for those services.
   - Kenni
---->
+-->
 
 Kenni creates a repository called ncssbook.
 
-<!--- Screenshot of GfW repo creation --->
+<!-- Screenshot of GfW repo creation -->
 ![Information is eneter about the repository and then the create button is clicked](images/create-gw.png "Creating a repository")
 ![The repository is created and is shown in the list](images/created-gw.png "The repository has been created")
 
@@ -113,7 +113,7 @@ git init ncssbook
 This repository won't be worked on directly by any of Group 0.
 Instead this repository is like a remote backup that will be updated with the latest version of the code as the group member "push" it out.
 
-<!--- Diagram of the relationship between the repos --->
+<!-- Diagram of the relationship between the repos -->
 
 
 Now everyone has to "clone" a copy of ncssbook for themselves.
@@ -122,7 +122,7 @@ Luckily Kenni has put the repo on the NCSS servers.
 
 To clone the repository Dom simply drags a link to the repository onto Github for Windows.
 
-<!--- Screenshot of GfW repo cloning --->
+<!-- Screenshot of GfW repo cloning -->
 ![Drag any url (must start with the protocol e.g. `http`) onto the window](images/clone-gw.png "Clone the repository")
 ![The repository is cloned and opened](images/cloned-gw.png "The repository is cloned")
 
@@ -135,7 +135,7 @@ git clone http://ncss.edu.au/2014/group0/ncssbook.git
 The first thing Group 0 are going to do with this new repository is create an index page for their social network.
 To do this Georgina simply creates a file called `index.html` using her favourite text editor (vimacs).
 
-<!--- Screenshot of folder --->
+<!-- Screenshot of folder -->
 ![There is now an index.html file in the ncssbook folder](images/newfile-ex.png "index.html file is created")
 
 Once the file exists it can be added to the repository using Github for Windows.
@@ -143,7 +143,7 @@ We can see on thee right hand side of the window the list of new files.
 For the moment this is just `index.html`.
 The checkbox next to its name indicates Georgina wants it to be part of the repository.
 
-<!--- Screenshot of new files in GfW --->
+<!-- Screenshot of new files in GfW -->
 ![The index.html file is listed as 'NEW' in Github for Windows](images/newfile-gw.png "index.html is list as a new file")
 
 ```bash
@@ -156,7 +156,7 @@ git add index.html
 Now it's time for Georgina to commit the changes to her repository.
 To do this she adds a message to the text field and then clicks 'commit to master'.
 
-<!--- Screenshot of committing in GfW --->
+<!-- Screenshot of committing in GfW -->
 ![The commit message is entered into the text field and then the 'commit to master' button gets clicked](images/commit-gw.png "A helpful commit message is written")
 
 ```bash
@@ -174,7 +174,7 @@ git log
 At the moment Georgina is the only person who has the NCSSBook homepage.
 So the next step for Georgina is to push the commit containing `index.html` to the remote repository Kenni created.
 
-<!--- Screenshot of pushing commits in GfW --->
+<!-- Screenshot of pushing commits in GfW -->
 ![The commit gets pushed to the remote server when the 'publish' button is clicked](images/push-gw.png "The commit is pushed to the remote server")
 ![The commit moves from 'unsynced commits' to 'history'](images/pushed-gw.png "The commit is now synced")
 
@@ -185,7 +185,7 @@ git push
 Now everyone else in Group 0 can pull the changes stored on the remote repository.
 For example Smerity clicks on the 'sync' button to pull the commit.
 
-<!--- Screenshot of pullng commits in GfW --->
+<!-- Screenshot of pullng commits in GfW -->
 ![The changes pushed from the remote repository have been pulled to a different local repository](images/pull-gw.png "The commit is now synced")
 
 ```bash
@@ -194,7 +194,7 @@ git pull
 
 ### Fixing mistakes
 
-<!---
+<!--
 Unstaging files
   git reset HEAD
 
@@ -211,12 +211,12 @@ Fixing the previous commit
   git commit --amend
 
 Why it's a bad idea to try and change the remote repo's history
---->
+-->
 
 
 ### Merging other people's work
 
-<!---
+<!--
 Situations where we can't push due to changes to the remote repo
   git push
 
@@ -224,12 +224,12 @@ Merge conflict
   git pull
 Make changes to fix conflict
   git merge
---->
+-->
 
 
 ### Avoiding conflicts
 
-<!---
+<!--
 Why branches?
 
 Create a new branch
@@ -241,12 +241,12 @@ Changing branch
 Merging branches
   git checkout <branch-to-merge-into>
   git merge <branch-to-merge>
----> 
+--> 
 
 
 ### Going back in time
 
-<!---
+<!--
 Viewing old commits
   git log
 
@@ -266,7 +266,7 @@ Revert to previous commit
 
 Revert to old commit
   git revert <commit>
---->
+-->
 
 ## Workflow
-<!--- A digram explaining the stage/commit/pull/push workflow --->
+<!-- A digram explaining the stage/commit/pull/push workflow -->
