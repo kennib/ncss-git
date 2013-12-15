@@ -11,4 +11,9 @@ Pandoc command to generate a pdf
 pandoc ncss-git.md -o ncss-git.pdf
 ```
 
+Pandoc command to generate a web page
+```
+pandoc ncss-git.md -o ncss-git.html --css=main.css
+```
+
 Feel free to contribute via pull request or if you are an NCSS tutor then you can email me your Github account so I can add you as a collaborator.

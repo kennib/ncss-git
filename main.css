@@ -1,0 +1,22 @@
+body {
+	max-width: 1000px;
+	margin: auto;
+}
+
+div.figure {
+	padding: 5px;
+
+	background: #F5F5F5;
+
+	text-align: center;
+}
+
+div.figure > img {
+	height: 400px;
+
+	border: 1px solid #333;
+}
+
+div.figure > p.caption {
+	font-weight: bold;
+}
