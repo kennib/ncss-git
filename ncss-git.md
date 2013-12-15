@@ -131,20 +131,43 @@ git clone http://ncss.edu.au/2014/group0/ncssbook.git
 ```
 
 
-### Making some changes
+### Adding new files
+The first thing Group 0 are going to do with this new repository is create an index page for their social network.
+To do this Georgina simply creates a file called `index.html` using her favourite text editor (vimacs).
 
-<!---
-Creating new files
-Staging/tracking files
-  git add <file>
+<!--- Screenshot of folder --->
+![There is now an index.html file in the ncssbook folder](images/newfile-ex.png "index.html file is created")
 
-Checking the changes/commit
-  git diff <file>
-  git status
+Once the file exists it can be added to the repository using Github for Windows.
+We can see on thee right hand side of the window the list of new files.
+For the moment this is just `index.html`.
+The checkbox next to its name indicates Georgina wants it to be part of the repository.
 
-Committing changes
-  git commit
---->
+<!--- Screenshot of new files in GfW --->
+![The index.html file is listed as 'NEW' in Github for Windows](images/newfile-gw.png "index.html is list as a new file")
+
+```bash
+# Show the files that are new
+git status
+
+# Add the index page to the commit
+git add index.html
+```
+Now it's time for Georgina to commit the changes to her repository.
+To do this she adds a message to the text field and then clicks 'commit to master'.
+
+<!--- Screenshot of committing in GfW --->
+![The commit message is entered into the text field and then the 'commit to master' button gets clicked](images/commit-gw.png "A helpful commit message is written")
+
+```bash
+git commit -m "The new home page for NCSSBook"
+```
+
+![The commit has been added and we now have a record of our changes](images/committed-gw.png "The commit has been added")
+
+```bash
+git log
+```
 
 
 ### Sharing the changes
