@@ -1,6 +1,7 @@
 body {
 	max-width: 1000px;
 	margin: auto;
+	padding: 20px;
 }
 
 div.figure {
@@ -19,4 +20,23 @@ div.figure > img {
 
 div.figure > p.caption {
 	font-weight: bold;
+}
+
+pre.sourceCode {
+	margin-top: 0px;
+	padding: 5px;
+
+	background: #FAFAFA;
+
+	text-align: center;
+}
+
+code.sourceCode {
+	display:inline-block;
+	min-width: 400px;
+	padding: 5px;
+
+	border: 1px solid #AAA;
+
+	text-align: left;
 }
