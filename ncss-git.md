@@ -103,7 +103,7 @@ I'm inclined to avoid Github and Bitbucket to avoid having to create/manage acco
 Kenni creates a repository called ncssbook.
 
 <!-- Screenshot of GfW repo creation -->
-![Information is eneter about the repository and then the create button is clicked](images/create-gw.png "Creating a repository")
+![Information is entered about the repository and then the create button is clicked](images/create-gw.png "Creating a repository")
 
 ![The repository is created and is shown in the list](images/created-gw.png "The repository has been created")
 
